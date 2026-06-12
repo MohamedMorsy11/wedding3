@@ -7,7 +7,7 @@
 <meta name="description" content="The royal union of Sarah and Omar — 15 November 2026 · Cairo, Egypt">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* ===================================================
@@ -46,6 +46,22 @@ body {
 img { max-width:100%; display:block; }
 
 /* ===================================================
+   BILINGUAL STRUCTURAL FONTS
+   =================================================== */
+.ar {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+  display: block;
+}
+.en {
+  font-family: 'Cormorant Garamond', serif;
+  direction: ltr;
+  display: block;
+}
+span.ar { display: inline-block; }
+span.en { display: inline-block; }
+
+/* ===================================================
    SCROLL REVEAL
    =================================================== */
 .reveal {
@@ -76,6 +92,7 @@ img { max-width:100%; display:block; }
   color:var(--gold);
   margin-bottom:1rem;
 }
+.eyebrow .ar { font-size: 1.1rem; letter-spacing: 0; margin-bottom: 0.3rem; }
 
 .section-title {
   font-family:'Cinzel Decorative', serif;
@@ -84,6 +101,7 @@ img { max-width:100%; display:block; }
   line-height:1.3;
   color:var(--gold);
 }
+.section-title .ar { font-size: clamp(1.8rem, 5vw, 3.2rem); margin-bottom: 0.5rem; font-weight: 700; }
 
 .ornament {
   display:flex;
@@ -124,7 +142,6 @@ img { max-width:100%; display:block; }
 .hero-bg {
   position:absolute;
   inset:-4% 0;
-  /* صورتك الأصلية للهيرو وضعت هنا بنجاح */
   background:url('https://i.pinimg.com/736x/a3/e3/4a/a3e34acc5cbfd56615ce89089e31afe3.jpg')
              center / cover no-repeat;
 }
@@ -163,8 +180,9 @@ img { max-width:100%; display:block; }
   color:var(--gold);
   opacity:.8;
   display:block;
-  margin-bottom:2rem;
+  margin-bottom:1.5rem;
 }
+.hero-eyebrow .ar { font-size: 1.3rem; letter-spacing: 0; margin-bottom: 0.5rem; }
 
 .hero-rule {
   display:flex;
@@ -184,14 +202,15 @@ img { max-width:100%; display:block; }
 
 .hero-names {
   font-family:'Great Vibes', cursive;
-  font-size:clamp(4rem, 13vw, 10rem);
+  font-size:clamp(3.5rem, 11vw, 8.5rem);
   color:var(--gold);
-  line-height:1.55;
-  padding:.45em .25em;
+  line-height:1.4;
+  padding:.25em .25em;
   display:block;
   overflow:visible;
   text-shadow:0 0 70px rgba(212,175,55,.22), 0 2px 24px rgba(0,0,0,.45);
 }
+.hero-names .ar { font-family: 'Amiri', serif; font-size: clamp(3.5rem, 10vw, 7.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
 
 .hero-sub-rule {
   display:flex;
@@ -208,7 +227,9 @@ img { max-width:100%; display:block; }
   color:var(--cream);
   opacity:.82;
   display:block;
+  line-height: 1.6;
 }
+.hero-date .ar { font-size: 1.3rem; letter-spacing: 0; margin-bottom: 0.3rem; }
 
 .hero-venue {
   font-family:'Cormorant Garamond', serif;
@@ -217,7 +238,9 @@ img { max-width:100%; display:block; }
   font-style:italic;
   opacity:.78;
   margin-top:.5rem;
+  line-height: 1.6;
 }
+.hero-venue .ar { font-size: 1.35rem; font-style: normal; }
 
 .scroll-indicator {
   position:absolute;
@@ -228,7 +251,7 @@ img { max-width:100%; display:block; }
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:.6rem;
+  gap:.4rem;
   color:var(--gold);
   opacity:.6;
   text-decoration:none;
@@ -240,6 +263,7 @@ img { max-width:100%; display:block; }
   letter-spacing:.35em;
   text-transform:uppercase;
 }
+.scroll-indicator-label .ar { font-size: 0.85rem; letter-spacing: 0; }
 .scroll-mouse {
   width:24px; height:38px;
   border:1.5px solid currentColor;
@@ -298,6 +322,8 @@ img { max-width:100%; display:block; }
   font-weight:300;
   margin-top:2rem;
 }
+.story-body .ar { font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 2; margin-bottom: 1rem; text-align: justify; text-justify: inter-word; }
+.story-body .en { text-align: justify; text-justify: inter-word; }
 
 .story-pullquote {
   font-family:'Great Vibes', cursive;
@@ -310,6 +336,7 @@ img { max-width:100%; display:block; }
   margin:2rem 0;
   opacity:.82;
 }
+.story-pullquote .ar { font-family: 'Amiri', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; line-height: 1.4; margin-bottom: 0.5rem; }
 
 /* ===================================================
    DETAILS SECTION
@@ -393,6 +420,7 @@ img { max-width:100%; display:block; }
   position:relative;
   z-index:1;
 }
+.card-eyebrow .ar { font-size: 1.1rem; letter-spacing: 0; margin-bottom: 0.2rem; }
 
 .card-content {
   font-family:'Cormorant Garamond', serif;
@@ -410,6 +438,7 @@ img { max-width:100%; display:block; }
   color:#fff;
   margin-bottom:.15rem;
 }
+.card-content .ar { font-size: 1.4rem; color: #fff; font-weight: 700; margin-bottom: 0.3rem; }
 
 /* ===================================================
    COUNTDOWN SECTION
@@ -467,6 +496,7 @@ img { max-width:100%; display:block; }
   margin-top:.5rem;
   display:block;
 }
+.cd-label .ar { font-size: 1.1rem; letter-spacing: 0; margin-bottom: 0.1rem; }
 
 .cd-sep {
   font-family:'Cinzel Decorative', serif;
@@ -484,7 +514,7 @@ img { max-width:100%; display:block; }
 }
 
 /* ===================================================
-   GALLERY (ضبط الأبعاد والمقاسات للموبايل دون المساس بروابطك)
+   GALLERY
    =================================================== */
 #gallery {
   background:var(--cream);
@@ -529,7 +559,6 @@ img { max-width:100%; display:block; }
 }
 .gallery-item:hover::after { opacity:1; }
 
-/* هندسة أبعاد مربعات المعرض لتصغير مرن على الموبايل والكمبيوتر */
 .gallery-item:nth-child(1) { grid-column:1/3; aspect-ratio: 16 / 10; }
 .gallery-item:nth-child(2) { grid-column:3;   aspect-ratio: 8 / 10; }
 .gallery-item:nth-child(3) { grid-column:1;   aspect-ratio: 1 / 1; }
@@ -599,6 +628,8 @@ img { max-width:100%; display:block; }
   color:var(--gold);
   margin-bottom:.65rem;
 }
+.form-label .ar { font-size: 1.15rem; letter-spacing: 0; margin-bottom: 0.2rem; text-align: right; }
+.form-label .en { text-align: left; }
 
 .form-field {
   width:100%;
@@ -656,6 +687,7 @@ textarea.form-field { resize:vertical; min-height:80px; }
   line-height:1.4;
   user-select:none;
 }
+.radio-btn .ar { font-size: 1.15rem; margin-bottom: 0.15rem; }
 .radio-btn:hover { border-color:rgba(212,175,55,.48); color:var(--cream); }
 .radio-option input:checked + .radio-btn {
   border-color:var(--gold);
@@ -681,6 +713,7 @@ textarea.form-field { resize:vertical; min-height:80px; }
   font-weight:700;
   transition:background-position .6s ease, transform .3s ease, box-shadow .3s ease;
 }
+.submit-btn .ar { font-size: 1.25rem; letter-spacing: 0; font-weight: 700; margin-bottom: 0.15rem; color:var(--lapis-deep); }
 .submit-btn:hover:not(:disabled) {
   background-position:right center;
   transform:translateY(-2px);
@@ -701,6 +734,7 @@ textarea.form-field { resize:vertical; min-height:80px; }
   margin-bottom:1rem;
   line-height:1.35;
 }
+.success-title .ar { font-size: 1.65rem; font-weight: 700; margin-bottom: 0.4rem; }
 .success-body {
   font-family:'Cormorant Garamond', serif;
   font-size:clamp(1rem,2vw,1.2rem);
@@ -709,6 +743,7 @@ textarea.form-field { resize:vertical; min-height:80px; }
   font-style:italic;
   line-height:1.75;
 }
+.success-body .ar { font-size: 1.35rem; font-style: normal; margin-bottom: 0.6rem; }
 
 /* ===================================================
    FOOTER
@@ -724,11 +759,12 @@ footer {
   font-family:'Great Vibes', cursive;
   font-size:clamp(2.8rem, 8vw, 5.5rem);
   color:var(--gold);
-  line-height:1.55;
-  padding:.4em .2em;
+  line-height:1.4;
+  padding:.2em .2em;
   overflow:visible;
   display:block;
 }
+.footer-names .ar { font-family: 'Amiri', serif; font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 700; margin-bottom: 0.3rem; }
 
 .footer-sub {
   font-family:'Cormorant Garamond', serif;
@@ -737,21 +773,23 @@ footer {
   color:var(--cream);
   opacity:.42;
   margin-top:.8rem;
+  line-height: 1.6;
 }
+.footer-sub .ar { font-size: 1.2rem; letter-spacing: 0; }
 </style>
 </head>
 <body>
 
-<!-- ===================================================
-     HERO
-     =================================================== -->
 <section id="hero" aria-label="Wedding invitation hero">
   <div class="hero-bg" id="hero-bg" role="img" aria-label="Majestic Egyptian landscape at golden hour"></div>
   <div class="hero-veil"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
   <div class="hero-body">
-    <span class="hero-eyebrow">In the Name of Ra &nbsp;·&nbsp; Eternal Light of Egypt</span>
+    <span class="hero-eyebrow">
+      <span class="ar">باسم رع &nbsp;·&nbsp; النور الخالد لأرض مصر</span>
+      <span class="en">In the Name of Ra &nbsp;·&nbsp; Eternal Light of Egypt</span>
+    </span>
 
     <div class="hero-rule">
       <div class="hero-rule-line"></div>
@@ -763,7 +801,10 @@ footer {
       <div class="hero-rule-line rev"></div>
     </div>
 
-    <span class="hero-names">Sarah &amp; Omar</span>
+    <h1 class="hero-names">
+      <span class="ar">سارة &amp; عمر</span>
+      <span class="en">Sarah &amp; Omar</span>
+    </h1>
 
     <div class="hero-sub-rule">
       <div style="width:55px;height:1px;background:linear-gradient(to right,transparent,rgba(212,175,55,.5));"></div>
@@ -771,24 +812,36 @@ footer {
       <div style="width:55px;height:1px;background:linear-gradient(to left,transparent,rgba(212,175,55,.5));"></div>
     </div>
 
-    <span class="hero-date">SATURDAY &nbsp;·&nbsp; THE 15TH OF NOVEMBER &nbsp;·&nbsp; 2026</span>
-    <p class="hero-venue">Grand Nile Palace &nbsp;·&nbsp; Cairo, Egypt</p>
+    <span class="hero-date">
+      <span class="ar">السبت &nbsp;·&nbsp; الخامس عشر من نوفمبر &nbsp;·&nbsp; ٢٠٢٦</span>
+      <span class="en">SATURDAY &nbsp;·&nbsp; THE 15TH OF NOVEMBER &nbsp;·&nbsp; 2026</span>
+    </span>
+    <p class="hero-venue">
+      <span class="ar">قصر النيل الكبير &nbsp;·&nbsp; القاهرة، مصر</span>
+      <span class="en">Grand Nile Palace &nbsp;·&nbsp; Cairo, Egypt</span>
+    </p>
   </div>
 
   <a href="#story" class="scroll-indicator" aria-label="Scroll to read more">
-    <span class="scroll-indicator-label">Scroll</span>
+    <span class="scroll-indicator-label">
+      <span class="ar">قصتنا</span>
+      <span class="en">Our Story</span>
+    </span>
     <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
   </a>
 </section>
 
 
-<!-- ===================================================
-     STORY
-     =================================================== -->
 <section id="story" aria-labelledby="story-heading">
   <div class="story-inner">
-    <span class="eyebrow reveal">Their Sacred Story</span>
-    <h2 id="story-heading" class="section-title reveal rd1">Written In The Stars</h2>
+    <span class="eyebrow reveal">
+      <span class="ar">قصتهم المقدسة</span>
+      <span class="en">Their Sacred Story</span>
+    </span>
+    <h2 id="story-heading" class="section-title reveal rd1">
+      <span class="ar">مكتوبة في النجوم</span>
+      <span class="en">Written In The Stars</span>
+    </h2>
 
     <div class="ornament reveal rd2">
       <div class="o-line"></div>
@@ -796,26 +849,42 @@ footer {
       <div class="o-line rev"></div>
     </div>
 
-    <p class="story-body reveal rd2">
-      Like the eternal flow of the great Nile — constant, life-giving, and boundless beyond measure — their love story unfolded beneath the ancient sky of Egypt. Where golden dunes kiss the horizon and the breath of history whispers through sacred stones, Sarah and Omar found each other, and in doing so, found forever.
-    </p>
+    <div class="story-body reveal rd2">
+      <p class="ar">
+        مثل التدفق الأبدي لنهر النيل العظيم — الراسخ، الواهب للحياة، والممتد بلا حدود — بدأت قصة حبهما تتجلى تحت سماء مصر العريقة. حيث تلامس الكثبان الذهبية الأفق، وتهمس أنفاس التاريخ عبر الأحجار المقدسة، التقت أرواح سارة وعمر، لتبدأ معاً رحلة الخلود.
+      </p>
+      <p class="en">
+        Like the eternal flow of the great Nile — constant, life-giving, and boundless beyond measure — their love story unfolded beneath the ancient sky of Egypt. Where golden dunes kiss the horizon and the breath of history whispers through sacred stones, Sarah and Omar found each other, and in doing so, found forever.
+      </p>
+    </div>
 
-    <span class="story-pullquote reveal rd3">"Two souls bound across time, beneath the eternal sky"</span>
+    <span class="story-pullquote reveal rd3">
+      <span class="ar">"روحان التقيا عبر الزمن، تحت سماء الخلود الأبدية"</span>
+      <span class="en">"Two souls bound across time, beneath the eternal sky"</span>
+    </span>
 
-    <p class="story-body reveal rd3">
-      It is with humble, overflowing hearts that they invite their most beloved — cherished family and dearest friends — to witness the beginning of their eternity. Come, celebrate this royal union of heritage, of joy, and of a love as enduring as the temples that have graced this sacred land for millennia.
-    </p>
+    <div class="story-body reveal rd3">
+      <p class="ar">
+        بقلوب تفيض بالمحبة والبهجة، يدعونكم — عائلاتهم العزيزة وأصدقائهم الأوفياء — لتكونوا شهوداً على ميثاق خلودهما. تعالوا لنحتفل معاً بهذا الرباط الملكي الأصيل، في ليلة مصرية تجمع بين روعة التراث وصدق الوعود، لتظل نابضة بالحياة مثل المعابد التي تزين هذه الأرض المقدسة منذ آلاف السنين.
+      </p>
+      <p class="en">
+        It is with humble, overflowing hearts that they invite their most beloved — cherished family and dearest friends — to witness the beginning of their eternity. Come, celebrate this royal union of heritage, of joy, and of a love as enduring as the temples that have graced this sacred land for millennia.
+      </p>
+    </div>
   </div>
 </section>
 
 
-<!-- ===================================================
-     DETAILS — Stone Relief Cards
-     =================================================== -->
 <section id="details" aria-labelledby="details-heading">
   <div class="section-header reveal">
-    <span class="eyebrow">The Royal Proclamation</span>
-    <h2 id="details-heading" class="section-title">Sacred Details</h2>
+    <span class="eyebrow">
+      <span class="ar">البيان الملكي المقدس</span>
+      <span class="en">The Royal Proclamation</span>
+    </span>
+    <h2 id="details-heading" class="section-title">
+      <span class="ar">تفاصيل الحفل</span>
+      <span class="en">Sacred Details</span>
+    </h2>
     <div class="ornament" style="max-width:190px;">
       <div class="o-line"></div><div class="o-diamond"></div><div class="o-line rev"></div>
     </div>
@@ -824,83 +893,121 @@ footer {
   <div class="details-grid">
     <div class="detail-card reveal rd1">
       <span class="card-glyph" aria-hidden="true">𓇳</span>
-      <span class="card-eyebrow">The Sacred Date</span>
+      <span class="card-eyebrow">
+        <span class="ar">التاريخ</span>
+        <span class="en">The Sacred Date</span>
+      </span>
       <div class="card-content">
-        <strong>15 November 2026</strong>
-        Saturday Evening
+        <strong class="ar">١٥ نوفمبر ٢٠٢٦</strong>
+        <strong class="en">15 November 2026</strong>
+        <span class="ar">مساء السبت</span>
+        <span class="en">Saturday Evening</span>
       </div>
     </div>
 
     <div class="detail-card reveal rd2">
       <span class="card-glyph" aria-hidden="true">⟡</span>
-      <span class="card-eyebrow">Hour of Union</span>
+      <span class="card-eyebrow">
+        <span class="ar">ساعة الالتقاء</span>
+        <span class="en">Hour of Union</span>
+      </span>
       <div class="card-content">
-        <strong>7:00 PM</strong>
-        Doors Open at 6:30 PM
+        <strong class="ar">٧:٠٠ مساءً</strong>
+        <strong class="en">7:00 PM</strong>
+        <span class="ar">تفتح الأبواب ٦:٣٠ مساءً</span>
+        <span class="en">Doors Open at 6:30 PM</span>
       </div>
     </div>
 
     <div class="detail-card reveal rd3">
       <span class="card-glyph" aria-hidden="true">𓂀</span>
-      <span class="card-eyebrow">The Royal Palace</span>
+      <span class="card-eyebrow">
+        <span class="ar">الموقع</span>
+        <span class="en">The Royal Palace</span>
+      </span>
       <div class="card-content">
-        <strong>Grand Nile Palace</strong>
-        Corniche El Nil, Cairo
+        <strong class="ar">قصر النيل الكبير</strong>
+        <strong class="en">Grand Nile Palace</strong>
+        <span class="ar">كورنيش النيل، القاهرة</span>
+        <span class="en">Corniche El Nil, Cairo</span>
       </div>
     </div>
 
     <div class="detail-card reveal rd4">
       <span class="card-glyph" style="font-size:1.6rem;" aria-hidden="true">✦</span>
-      <span class="card-eyebrow">Royal Attire</span>
+      <span class="card-eyebrow">
+        <span class="ar">المظهر الملكي</span>
+        <span class="en">Royal Attire</span>
+      </span>
       <div class="card-content">
-        <strong>Black Tie</strong>
-        Gold &amp; Royal Blue Accents Welcome
+        <strong class="ar">ملابس رسمية</strong>
+        <strong class="en">Black Tie</strong>
+        <span class="ar">اللمسات الذهبية والأزرق الملكي مرحب بها</span>
+        <span class="en">Gold &amp; Royal Blue Accents Welcome</span>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ===================================================
-     COUNTDOWN
-     =================================================== -->
 <section id="countdown" aria-labelledby="countdown-heading">
   <div class="countdown-header reveal">
-    <span class="eyebrow">The Sacred Hour Draws Near</span>
-    <h2 id="countdown-heading" class="section-title">Counting The Sunrises</h2>
+    <span class="eyebrow">
+      <span class="ar">الموعد المقدس يقترب</span>
+      <span class="en">The Sacred Hour Draws Near</span>
+    </span>
+    <h2 id="countdown-heading" class="section-title">
+      <span class="ar">تنازل نبضات الشمس</span>
+      <span class="en">Counting The Sunrises</span>
+    </h2>
   </div>
 
   <div class="countdown-row" aria-live="polite" aria-label="Countdown to the wedding">
     <div class="cd-unit reveal">
       <span class="cd-num" id="cd-days">--</span>
-      <span class="cd-label">Days</span>
+      <span class="cd-label">
+        <span class="ar">يوم</span>
+        <span class="en">Days</span>
+      </span>
     </div>
     <span class="cd-sep reveal" aria-hidden="true">·</span>
     <div class="cd-unit reveal rd1">
       <span class="cd-num" id="cd-hours">--</span>
-      <span class="cd-label">Hours</span>
+      <span class="cd-label">
+        <span class="ar">ساعة</span>
+        <span class="en">Hours</span>
+      </span>
     </div>
     <span class="cd-sep reveal rd1" aria-hidden="true">·</span>
     <div class="cd-unit reveal rd2">
       <span class="cd-num" id="cd-mins">--</span>
-      <span class="cd-label">Minutes</span>
+      <span class="cd-label">
+        <span class="ar">دقيقة</span>
+        <span class="en">Minutes</span>
+      </span>
     </div>
     <span class="cd-sep reveal rd2" aria-hidden="true">·</span>
     <div class="cd-unit reveal rd3">
       <span class="cd-num" id="cd-secs">--</span>
-      <span class="cd-label">Seconds</span>
+      <span class="cd-label">
+        <span class="ar">ثانية</span>
+        <span class="en">Seconds</span>
+      </span>
     </div>
   </div>
 </section>
 
 
-<!-- ===================================================
-     GALLERY (جميع صور الـ Pinterest الأصلية الخاصة بك وبأبعاد متجاوبة تماماً)
-     =================================================== -->
 <section id="gallery" aria-labelledby="gallery-heading">
   <div class="section-header reveal" style="text-align:center; margin-bottom:clamp(2.5rem,5vw,4rem);">
-    <span class="eyebrow">Captured Moments</span>
-    <h2 id="gallery-heading" class="section-title">Eternal Fragments of Love</h2>
+    <span class="eyebrow">
+      <span class="ar">لحظات مخلدة</span>
+      <span class="en">Captured Moments</span>
+    </span>
+    <h2 id="gallery-heading" class="section-title">
+      <span class="ar">شظايا من الحب الأبدي</span>
+      <span class="en">Eternal Fragments of Love</span>
+    </h2>
     <div class="ornament" style="max-width:190px;">
       <div class="o-line"></div><div class="o-diamond"></div><div class="o-line rev"></div>
     </div>
@@ -935,84 +1042,117 @@ footer {
 </section>
 
 
-<!-- ===================================================
-     RSVP
-     =================================================== -->
 <section id="rsvp" aria-labelledby="rsvp-heading">
   <canvas id="rsvp-canvas" aria-hidden="true"></canvas>
 
   <div class="rsvp-inner">
     <div class="section-header reveal" style="text-align:center; margin-bottom:clamp(2.5rem,5vw,3.5rem);">
-      <span class="eyebrow">Grant Us Your Sacred Response</span>
-      <h2 id="rsvp-heading" class="section-title">Royal RSVP</h2>
+      <span class="eyebrow">
+        <span class="ar">شرفونا بتأكيد حضوركم الملكي</span>
+        <span class="en">Grant Us Your Sacred Response</span>
+      </span>
+      <h2 id="rsvp-heading" class="section-title">
+        <span class="ar">تأكيد الحضور</span>
+        <span class="en">Royal RSVP</span>
+      </h2>
       <div class="ornament" style="max-width:190px;">
         <div class="o-line"></div><div class="o-diamond"></div><div class="o-line rev"></div>
       </div>
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.9vw,1.2rem);font-style:italic;color:var(--cream);opacity:.62;margin-top:.8rem;">
-        Kindly respond by the 1st of October, 2026
+        <span class="ar">برجاء الرد قبل الأول من أكتوبر ٢٠٢٦</span>
+        <span class="en">Kindly respond by the 1st of October, 2026</span>
       </p>
     </div>
 
     <div class="rsvp-card reveal rd1">
       <div id="form-wrapper">
         <div class="form-group">
-          <label class="form-label" for="fn">Full Name</label>
+          <label class="form-label" for="fn">
+            <span class="ar">الاسم بالكامل</span>
+            <span class="en">Full Name</span>
+          </label>
           <input type="text" id="fn" class="form-field" placeholder="Your noble name…" autocomplete="name">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="em">Email Address</label>
+          <label class="form-label" for="em">
+            <span class="ar">البريد الإلكتروني</span>
+            <span class="en">Email Address</span>
+          </label>
           <input type="email" id="em" class="form-field" placeholder="your@email.com" autocomplete="email">
         </div>
 
         <div class="form-group">
-          <label class="form-label">Will You Honour Us With Your Presence?</label>
+          <label class="form-label">
+            <span class="ar">هل ستشرفنا بالحضور والمشاركة؟</span>
+            <span class="en">Will You Honour Us With Your Presence?</span>
+          </label>
           <div class="radio-group">
             <div class="radio-option">
               <input type="radio" name="attend" id="r-yes" value="Joyfully Accepting">
-              <label for="r-yes" class="radio-btn">✦ &nbsp;Joyfully Accepting</label>
+              <label for="r-yes" class="radio-btn">
+                <span class="ar">بكل سرور سأحضر</span>
+                <span class="en">✦ &nbsp;Joyfully Accepting</span>
+              </label>
             </div>
             <div class="radio-option">
               <input type="radio" name="attend" id="r-no" value="Regretfully Declining">
-              <label for="r-no" class="radio-btn">✦ &nbsp;Regretfully Declining</label>
+              <label for="r-no" class="radio-btn">
+                <span class="ar">أعتذر بأسف عن الحضور</span>
+                <span class="en">✦ &nbsp;Regretfully Declining</span>
+              </label>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="gc">Number of Guests (Including Yourself)</label>
+          <label class="form-label" for="gc">
+            <span class="ar">عدد الحضور (شاملاً نفسك)</span>
+            <span class="en">Number of Guests (Including Yourself)</span>
+          </label>
           <input type="number" id="gc" class="form-field" min="1" max="10" placeholder="e.g. 2">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="diet">Dietary Preference</label>
+          <label class="form-label" for="diet">
+            <span class="ar">تفضيلات الطعام (إن وجدت)</span>
+            <span class="en">Dietary Preference</span>
+          </label>
           <div class="select-wrap">
             <select id="diet" class="form-field">
-              <option value="">No special preference</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
-              <option value="gluten-free">Gluten-Free</option>
-              <option value="halal">Halal</option>
-              <option value="other">Other (mention in message below)</option>
+              <option value="">No special preference / لا يوجد تفضيل خاص</option>
+              <option value="vegetarian">Vegetarian / نباتي مقتصر</option>
+              <option value="vegan">Vegan / نباتي صرف</option>
+              <option value="gluten-free">Gluten-Free / خالي من الغلوتين</option>
+              <option value="halal">Halal / حلال</option>
+              <option value="other">Other (mention below) / خيارات أخرى</option>
             </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="msg">A Blessing for the Royal Couple</label>
+          <label class="form-label" for="msg">
+            <span class="ar">تهنئة أو كلمة طيبة للعروسين</span>
+            <span class="en">A Blessing for the Royal Couple</span>
+          </label>
           <textarea id="msg" class="form-field" rows="3" placeholder="Share a few words of joy…"></textarea>
         </div>
 
         <button type="button" id="rsvp-btn" class="submit-btn">
-          Send Royal Response
+          <span class="ar">إرسال الرد الملكي</span>
+          <span class="en">Send Royal Response</span>
         </button>
       </div>
 
       <div id="success-card" class="success-card" role="status" aria-live="polite">
         <span class="success-glyph" aria-hidden="true">𓂀</span>
-        <h3 class="success-title">May Ra Bless Your Journey</h3>
+        <h3 class="success-title">
+          <span class="ar">ليبارك رع رحلتكم الماجدة</span>
+          <span class="en">May Ra Bless Your Journey</span>
+        </h3>
         <p class="success-body">
-          Your response has been received and honoured — it is now saved to our sacred guest list. We count every sunrise until we celebrate this eternal moment together.
+          <span class="ar">تم استلام ردكم الكريم وحفظه في سجلات القصر. نحن نعد الشروق يوماً بعد يوم بكل شغف حتى نلتقي ونحتفل معاً بهذه اللحظة التاريخية الخالدة.</span>
+          <span class="en">Your response has been received and honoured — it is now saved to our sacred guest list. We count every sunrise until we celebrate this eternal moment together.</span>
         </p>
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;">
           <div class="o-line" style="max-width:75px;"></div>
@@ -1028,16 +1168,19 @@ footer {
   </div>
 </section>
 
-<!-- ===================================================
-     FOOTER
-     =================================================== -->
 <footer>
   <span style="font-size:clamp(2rem,4.5vw,3rem);color:var(--gold);opacity:.45;display:block;margin-bottom:1rem;" aria-hidden="true">𓂀</span>
-  <span class="footer-names">Sarah &amp; Omar</span>
+  <h2 class="footer-names">
+    <span class="ar">سارة &amp; عمر</span>
+    <span class="en">Sarah &amp; Omar</span>
+  </h2>
   <div class="ornament" style="max-width:175px;margin:1.5rem auto;">
     <div class="o-line"></div><div class="o-diamond"></div><div class="o-line rev"></div>
   </div>
-  <p class="footer-sub">November 15 &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Cairo, Egypt &nbsp;·&nbsp; Grand Nile Palace</p>
+  <p class="footer-sub">
+    <span class="ar">١٥ نوفمبر ٢٠٢٦ &nbsp;·&nbsp; القاهرة، مصر &nbsp;·&nbsp; قصر النيل الكبير</span>
+    <span class="en">November 15 &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Cairo, Egypt &nbsp;·&nbsp; Grand Nile Palace</span>
+  </p>
   <p class="footer-sub" style="margin-top:.4rem;opacity:.28;">Crafted with eternal love &nbsp;✦</p>
 </footer>
 
@@ -1142,10 +1285,10 @@ function tickClock() {
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => { document.getElementById(id).textContent = '00'; }); return;
   }
-  const d  = Math.floor(diff / 86400000);
-  const h  = Math.floor((diff % 86400000) / 3600000);
-  const m  = Math.floor((diff % 3600000)  / 60000);
-  const s  = Math.floor((diff % 60000)    / 1000);
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000)  / 60000);
+  const s = Math.floor((diff % 60000)    / 1000);
 
   document.getElementById('cd-days').textContent  = pad(d);
   document.getElementById('cd-hours').textContent = pad(h);
@@ -1171,13 +1314,13 @@ document.getElementById('rsvp-btn').addEventListener('click', async () => {
   const diet   = document.getElementById('diet').value;
   const msg    = document.getElementById('msg').value.trim();
 
-  if (!name)   { showFieldError('Please enter your name.');               return; }
-  if (!email)  { showFieldError('Please enter your email address.');       return; }
-  if (!attend) { showFieldError('Please choose your attendance option.');  return; }
-  if (attend.value === 'Joyfully Accepting' && !guests) { showFieldError('Please enter the number of guests.'); return; }
+  if (!name)   { showFieldError('Please enter your name / برجاء إدخال الاسم'); return; }
+  if (!email)  { showFieldError('Please enter your email / برجاء إدخال البريد الإلكتروني'); return; }
+  if (!attend) { showFieldError('Please choose attendance / برجاء اختيار حالة الحضور'); return; }
+  if (attend.value === 'Joyfully Accepting' && !guests) { showFieldError('Please enter guest count / برجاء تحديد عدد المرافقين'); return; }
 
   const btn = document.getElementById('rsvp-btn');
-  btn.textContent = 'Sending…'; btn.disabled = true;
+  btn.textContent = 'Sending / جاري الإرسال…'; btn.disabled = true;
 
   const payload = { name, email, attendance: attend.value, guests: attend.value === 'Regretfully Declining' ? 0 : Number(guests), dietary: diet, message: msg, timestamp: new Date().toISOString() };
 
@@ -1199,7 +1342,7 @@ document.getElementById('rsvp-btn').addEventListener('click', async () => {
 function showFieldError(msg) {
   const existing = document.getElementById('rsvp-error'); if (existing) existing.remove();
   const el = document.createElement('p'); el.id = 'rsvp-error'; el.textContent = msg;
-  Object.assign(el.style, { fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(.9rem,1.8vw,1.05rem)', color: '#F0A070', fontStyle: 'italic', marginBottom: '1rem', opacity: '0', transition: 'opacity .3s ease', textAlign: 'center' });
+  Object.assign(el.style, { fontFamily: "'Amiri', serif", fontSize: 'clamp(1rem,1.8vw,1.15rem)', color: '#F0A070', fontStyle: 'italic', marginBottom: '1rem', opacity: '0', transition: 'opacity .3s ease', textAlign: 'center' });
   const btn = document.getElementById('rsvp-btn'); btn.parentNode.insertBefore(el, btn);
   requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = '1'; }));
   setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 320); }, 4000);
