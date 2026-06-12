@@ -85,7 +85,6 @@ img { max-width:100%; display:block; }
   color:var(--gold);
 }
 
-/* Ornamental divider */
 .ornament {
   display:flex;
   align-items:center;
@@ -106,7 +105,6 @@ img { max-width:100%; display:block; }
   flex-shrink:0;
 }
 
-/* Inline ankh SVG reused throughout */
 .ankh-svg { flex-shrink:0; }
 
 /* ===================================================
@@ -126,7 +124,7 @@ img { max-width:100%; display:block; }
 .hero-bg {
   position:absolute;
   inset:-4% 0;
-  /* Placeholder: replace with the couple's own cinematic photo */
+  /* صورتك الأصلية للهيرو وضعت هنا بنجاح */
   background:url('https://i.pinimg.com/736x/a3/e3/4a/a3e34acc5cbfd56615ce89089e31afe3.jpg')
              center / cover no-repeat;
 }
@@ -184,16 +182,12 @@ img { max-width:100%; display:block; }
   background:linear-gradient(to left, transparent, rgba(212,175,55,.65));
 }
 
-/*
- * CRITICAL: Great Vibes script font — generous line-height + vertical padding
- * ensure the tall 'S' cap and the '&' swash are NEVER clipped by any ancestor.
- */
 .hero-names {
   font-family:'Great Vibes', cursive;
   font-size:clamp(4rem, 13vw, 10rem);
   color:var(--gold);
-  line-height:1.55;                   /* ≥1.3 as required */
-  padding:.45em .25em;                /* generous vertical padding */
+  line-height:1.55;
+  padding:.45em .25em;
   display:block;
   overflow:visible;
   text-shadow:0 0 70px rgba(212,175,55,.22), 0 2px 24px rgba(0,0,0,.45);
@@ -225,7 +219,6 @@ img { max-width:100%; display:block; }
   margin-top:.5rem;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position:absolute;
   bottom:2.5rem;
@@ -277,7 +270,6 @@ img { max-width:100%; display:block; }
   position:relative;
 }
 
-/* Subtle papyrus texture */
 #story::before {
   content:'';
   position:absolute;
@@ -307,7 +299,6 @@ img { max-width:100%; display:block; }
   margin-top:2rem;
 }
 
-/* Script pull-quote — same Great Vibes safety rules applied */
 .story-pullquote {
   font-family:'Great Vibes', cursive;
   font-size:clamp(2rem, 5.5vw, 3.5rem);
@@ -321,7 +312,7 @@ img { max-width:100%; display:block; }
 }
 
 /* ===================================================
-   DETAILS SECTION — Stone Relief Cards
+   DETAILS SECTION
    =================================================== */
 #details {
   background:var(--lapis);
@@ -354,7 +345,6 @@ img { max-width:100%; display:block; }
   overflow:hidden;
 }
 
-/* Inner inset border — relief effect */
 .detail-card::before {
   content:'';
   position:absolute;
@@ -365,7 +355,6 @@ img { max-width:100%; display:block; }
   transition:border-color .45s ease;
 }
 
-/* Warm radial highlight on hover */
 .detail-card::after {
   content:'';
   position:absolute;
@@ -376,7 +365,6 @@ img { max-width:100%; display:block; }
   pointer-events:none;
 }
 
-/* Hover: lift + slight rotate + gold glow — as specified */
 .detail-card:hover {
   transform:translateY(-10px) rotate(1.5deg);
   box-shadow:0 22px 55px rgba(212,175,55,.22), 0 0 45px rgba(212,175,55,.08);
@@ -496,7 +484,7 @@ img { max-width:100%; display:block; }
 }
 
 /* ===================================================
-   GALLERY
+   GALLERY (ضبط الأبعاد والمقاسات للموبايل دون المساس بروابطك)
    =================================================== */
 #gallery {
   background:var(--cream);
@@ -518,10 +506,9 @@ img { max-width:100%; display:block; }
 .gallery-item {
   position:relative;
   overflow:hidden;
-  background:var(--lapis-mid);  /* elegant fallback if image fails */
+  background:var(--lapis-mid);
 }
 
-/* Every gallery image: object-fit cover, no distortion */
 .gallery-item img {
   width:100%;
   height:100%;
@@ -531,7 +518,6 @@ img { max-width:100%; display:block; }
 }
 .gallery-item:hover img { transform:scale(1.065); }
 
-/* Gold gradient overlay on hover */
 .gallery-item::after {
   content:'';
   position:absolute;
@@ -543,27 +529,27 @@ img { max-width:100%; display:block; }
 }
 .gallery-item:hover::after { opacity:1; }
 
-/* Desktop layout — editorial grid */
-.gallery-item:nth-child(1) { grid-column:1/3; min-height:clamp(240px,35vw,430px); }
-.gallery-item:nth-child(2) { grid-column:3;   min-height:clamp(240px,35vw,430px); }
-.gallery-item:nth-child(3) { grid-column:1;   min-height:clamp(180px,22vw,305px); }
-.gallery-item:nth-child(4) { grid-column:2;   min-height:clamp(180px,22vw,305px); }
-.gallery-item:nth-child(5) { grid-column:3;   min-height:clamp(180px,22vw,305px); }
-.gallery-item:nth-child(6) { grid-column:1/4; min-height:clamp(220px,28vw,390px); }
+/* هندسة أبعاد مربعات المعرض لتصغير مرن على الموبايل والكمبيوتر */
+.gallery-item:nth-child(1) { grid-column:1/3; aspect-ratio: 16 / 10; }
+.gallery-item:nth-child(2) { grid-column:3;   aspect-ratio: 8 / 10; }
+.gallery-item:nth-child(3) { grid-column:1;   aspect-ratio: 1 / 1; }
+.gallery-item:nth-child(4) { grid-column:2;   aspect-ratio: 1 / 1; }
+.gallery-item:nth-child(5) { grid-column:3;   aspect-ratio: 1 / 1; }
+.gallery-item:nth-child(6) { grid-column:1/4; aspect-ratio: 21 / 9; }
 
 @media (max-width:768px) {
   .gallery-grid { grid-template-columns:repeat(2,1fr); }
-  .gallery-item:nth-child(1) { grid-column:1/3; min-height:260px; }
-  .gallery-item:nth-child(2) { grid-column:1;   min-height:210px; }
-  .gallery-item:nth-child(3) { grid-column:2;   min-height:210px; }
-  .gallery-item:nth-child(4) { grid-column:1;   min-height:210px; }
-  .gallery-item:nth-child(5) { grid-column:2;   min-height:210px; }
-  .gallery-item:nth-child(6) { grid-column:1/3; min-height:260px; }
+  .gallery-item:nth-child(1) { grid-column:1/3; aspect-ratio: 16 / 10; }
+  .gallery-item:nth-child(2) { grid-column:1;   aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(3) { grid-column:2;   aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(4) { grid-column:1;   aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(5) { grid-column:2;   aspect-ratio: 1 / 1; }
+  .gallery-item:nth-child(6) { grid-column:1/3; aspect-ratio: 16 / 9; }
 }
 
 @media (max-width:480px) {
   .gallery-grid { grid-template-columns:1fr; }
-  .gallery-item:nth-child(n) { grid-column:1; min-height:230px; }
+  .gallery-item:nth-child(n) { grid-column:1; aspect-ratio: 4 / 3; }
 }
 
 /* ===================================================
@@ -647,7 +633,6 @@ textarea.form-field { resize:vertical; min-height:80px; }
   font-size:.85rem;
 }
 
-/* Radio buttons — wrap to columns on narrow viewports */
 .radio-group {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -679,7 +664,6 @@ textarea.form-field { resize:vertical; min-height:80px; }
   box-shadow:0 0 20px rgba(212,175,55,.1);
 }
 
-/* CTA button */
 .submit-btn {
   width:100%;
   margin-top:.5rem;
@@ -704,7 +688,6 @@ textarea.form-field { resize:vertical; min-height:80px; }
 }
 .submit-btn:disabled { opacity:.65; cursor:not-allowed; }
 
-/* Success card */
 .success-card {
   display:none;
   text-align:center;
@@ -737,7 +720,6 @@ footer {
   border-top:1px solid rgba(212,175,55,.16);
 }
 
-/* Same Great Vibes safety rules */
 .footer-names {
   font-family:'Great Vibes', cursive;
   font-size:clamp(2.8rem, 8vw, 5.5rem);
@@ -773,7 +755,6 @@ footer {
 
     <div class="hero-rule">
       <div class="hero-rule-line"></div>
-      <!-- Ankh symbol -->
       <svg class="ankh-svg" viewBox="0 0 22 36" width="16" height="26" aria-hidden="true">
         <ellipse cx="11" cy="7.5" rx="5.5" ry="7.5" fill="none" stroke="#D4AF37" stroke-width="2.2"/>
         <line x1="11" y1="15" x2="11" y2="35" stroke="#D4AF37" stroke-width="2.2"/>
@@ -782,7 +763,6 @@ footer {
       <div class="hero-rule-line rev"></div>
     </div>
 
-    <!-- Great Vibes names: line-height 1.55 + padding .45em prevents all clipping -->
     <span class="hero-names">Sarah &amp; Omar</span>
 
     <div class="hero-sub-rule">
@@ -915,7 +895,7 @@ footer {
 
 
 <!-- ===================================================
-     GALLERY — Captured Moments
+     GALLERY (جميع صور الـ Pinterest الأصلية الخاصة بك وبأبعاد متجاوبة تماماً)
      =================================================== -->
 <section id="gallery" aria-labelledby="gallery-heading">
   <div class="section-header reveal" style="text-align:center; margin-bottom:clamp(2.5rem,5vw,4rem);">
@@ -926,7 +906,6 @@ footer {
     </div>
   </div>
 
-  <!-- Replace these placeholder images with the couple's own photographs -->
   <div class="gallery-grid">
     <div class="gallery-item reveal">
       <img src="https://i.pinimg.com/736x/c6/f6/76/c6f67600f70750289c76986994886123.jpg"
@@ -975,20 +954,15 @@ footer {
     </div>
 
     <div class="rsvp-card reveal rd1">
-
-      <!-- Form fields -->
       <div id="form-wrapper">
-
         <div class="form-group">
           <label class="form-label" for="fn">Full Name</label>
-          <input type="text" id="fn" class="form-field"
-                 placeholder="Your noble name…" autocomplete="name">
+          <input type="text" id="fn" class="form-field" placeholder="Your noble name…" autocomplete="name">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="em">Email Address</label>
-          <input type="email" id="em" class="form-field"
-                 placeholder="your@email.com" autocomplete="email">
+          <input type="email" id="em" class="form-field" placeholder="your@email.com" autocomplete="email">
         </div>
 
         <div class="form-group">
@@ -1007,8 +981,7 @@ footer {
 
         <div class="form-group">
           <label class="form-label" for="gc">Number of Guests (Including Yourself)</label>
-          <input type="number" id="gc" class="form-field"
-                 min="1" max="10" placeholder="e.g. 2">
+          <input type="number" id="gc" class="form-field" min="1" max="10" placeholder="e.g. 2">
         </div>
 
         <div class="form-group">
@@ -1027,16 +1000,14 @@ footer {
 
         <div class="form-group">
           <label class="form-label" for="msg">A Blessing for the Royal Couple</label>
-          <textarea id="msg" class="form-field" rows="3"
-                    placeholder="Share a few words of joy…"></textarea>
+          <textarea id="msg" class="form-field" rows="3" placeholder="Share a few words of joy…"></textarea>
         </div>
 
         <button type="button" id="rsvp-btn" class="submit-btn">
           Send Royal Response
         </button>
-      </div><!-- /form-wrapper -->
+      </div>
 
-      <!-- Success state (shown after submission) -->
       <div id="success-card" class="success-card" role="status" aria-live="polite">
         <span class="success-glyph" aria-hidden="true">𓂀</span>
         <h3 class="success-title">May Ra Bless Your Journey</h3>
@@ -1053,11 +1024,9 @@ footer {
           <div class="o-line rev" style="max-width:75px;"></div>
         </div>
       </div>
-
-    </div><!-- /rsvp-card -->
+    </div>
   </div>
 </section>
-
 
 <!-- ===================================================
      FOOTER
@@ -1072,18 +1041,9 @@ footer {
   <p class="footer-sub" style="margin-top:.4rem;opacity:.28;">Crafted with eternal love &nbsp;✦</p>
 </footer>
 
-
 <script>
-/* =====================================================
-   CHECK REDUCED MOTION PREFERENCE
-   ===================================================== */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* =====================================================
-   PARTICLE SYSTEM
-   Canvas-based floating particles: golden dust, lotus
-   petals, and ankh outlines — hero + RSVP canvases.
-   ===================================================== */
 function launchParticles(canvasEl, count) {
   if (!canvasEl || reducedMotion) return;
   const ctx = canvasEl.getContext('2d');
@@ -1098,7 +1058,6 @@ function launchParticles(canvasEl, count) {
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  /* Particle types — dust most common, lotus and ankh accent */
   const POOL = ['dust','dust','dust','dust','lotus','lotus','ankh'];
 
   function make() {
@@ -1118,70 +1077,37 @@ function launchParticles(canvasEl, count) {
   }
 
   const pts = Array.from({ length: count }, make);
-  /* Scatter initial y so screen fills instantly */
   pts.forEach(p => { p.y = Math.random() * (H || 600); });
 
   function drawDust(p) {
     const a = p.alpha * (.55 + .45 * Math.sin(p.pulse));
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = GOLD + a + ')';
-    ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = GOLD + a + ')'; ctx.fill();
   }
 
   function drawLotus(p) {
-    const s = p.size * 2.6;
-    ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.globalAlpha = p.alpha * .75;
+    const s = p.size * 2.6; ctx.save(); ctx.translate(p.x, p.y); ctx.globalAlpha = p.alpha * .75;
     for (let i = 0; i < 5; i++) {
-      ctx.save();
-      ctx.rotate((Math.PI * 2 / 5) * i + Math.PI * .5);
-      ctx.beginPath();
-      ctx.ellipse(0, -s, s * .36, s, 0, 0, Math.PI * 2);
-      ctx.fillStyle = '#D4AF37';
-      ctx.fill();
-      ctx.restore();
+      ctx.save(); ctx.rotate((Math.PI * 2 / 5) * i + Math.PI * .5); ctx.beginPath();
+      ctx.ellipse(0, -s, s * .36, s, 0, 0, Math.PI * 2); ctx.fillStyle = '#D4AF37'; ctx.fill(); ctx.restore();
     }
     ctx.restore();
   }
 
   function drawAnkh(p) {
-    const s = p.size * 2.9;
-    ctx.save();
-    ctx.translate(p.x, p.y);
-    ctx.globalAlpha = p.alpha * .65;
-    ctx.strokeStyle = '#D4AF37';
-    ctx.lineWidth   = Math.max(.5, s * .13);
-    ctx.lineCap     = 'round';
-    /* Loop oval */
-    ctx.beginPath();
-    ctx.ellipse(0, -s * .88, s * .46, s * .68, 0, 0, Math.PI * 2);
-    ctx.stroke();
-    /* Vertical stem */
-    ctx.beginPath();
-    ctx.moveTo(0, -s * .2);
-    ctx.lineTo(0,  s * 1.3);
-    ctx.stroke();
-    /* Crossbar */
-    ctx.beginPath();
-    ctx.moveTo(-s * .7, s * .35);
-    ctx.lineTo( s * .7, s * .35);
-    ctx.stroke();
-    ctx.restore();
+    const s = p.size * 2.9; ctx.save(); ctx.translate(p.x, p.y); ctx.globalAlpha = p.alpha * .65;
+    ctx.strokeStyle = '#D4AF37'; ctx.lineWidth = Math.max(.5, s * .13); ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.ellipse(0, -s * .88, s * .46, s * .68, 0, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, -s * .2); ctx.lineTo(0,  s * 1.3); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-s * .7, s * .35); ctx.lineTo( s * .7, s * .35); ctx.stroke(); ctx.restore();
   }
 
   function frame() {
     ctx.clearRect(0, 0, W, H);
     for (const p of pts) {
-      p.osc   += p.oscS;
-      p.pulse += p.pulS;
-      p.x += p.vx + Math.sin(p.osc) * .22;
-      p.y += p.vy;
-      /* Recycle when out of bounds */
-      if (p.y < -30 || p.x < -30 || p.x > W + 30) {
-        Object.assign(p, make());
-      }
+      p.osc   += p.oscS; p.pulse += p.pulS;
+      p.x += p.vx + Math.sin(p.osc) * .22; p.y += p.vy;
+      if (p.y < -30 || p.x < -30 || p.x > W + 30) { Object.assign(p, make()); }
       if      (p.type === 'lotus') drawLotus(p);
       else if (p.type === 'ankh')  drawAnkh(p);
       else                         drawDust(p);
@@ -1194,9 +1120,6 @@ function launchParticles(canvasEl, count) {
 launchParticles(document.getElementById('hero-canvas'),  115);
 launchParticles(document.getElementById('rsvp-canvas'),   50);
 
-/* =====================================================
-   SUBTLE HERO PARALLAX
-   ===================================================== */
 if (!reducedMotion) {
   const heroBg = document.getElementById('hero-bg');
   window.addEventListener('scroll', () => {
@@ -1204,38 +1127,21 @@ if (!reducedMotion) {
   }, { passive: true });
 }
 
-/* =====================================================
-   SCROLL REVEAL — IntersectionObserver
-   ===================================================== */
 const observer = new IntersectionObserver((entries) => {
   for (const e of entries) {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   }
 }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
-
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* =====================================================
-   COUNTDOWN TIMER
-   Target: 15 November 2026 · 19:00 · Cairo (EET = UTC+2)
-   ===================================================== */
+/* Countdown Timer */
 const WEDDING = new Date('2026-11-15T19:00:00+02:00');
-
 function pad(n) { return String(n).padStart(2, '0'); }
-
 function tickClock() {
   const diff = WEDDING - Date.now();
-
   if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
-      document.getElementById(id).textContent = '00';
-    });
-    return;
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => { document.getElementById(id).textContent = '00'; }); return;
   }
-
   const d  = Math.floor(diff / 86400000);
   const h  = Math.floor((diff % 86400000) / 3600000);
   const m  = Math.floor((diff % 3600000)  / 60000);
@@ -1246,34 +1152,15 @@ function tickClock() {
   document.getElementById('cd-mins').textContent  = pad(m);
   document.getElementById('cd-secs').textContent  = pad(s);
 }
-tickClock();
-setInterval(tickClock, 1000);
+tickClock(); setInterval(tickClock, 1000);
 
-/* =====================================================
-   RSVP — Smart Field Rules
-   Attendance radio controls the guest-count field.
-   ===================================================== */
 const rYes = document.getElementById('r-yes');
 const rNo  = document.getElementById('r-no');
 const gcEl = document.getElementById('gc');
 
-rNo.addEventListener('change', () => {
-  gcEl.value    = 0;
-  gcEl.disabled = true;
-  gcEl.removeAttribute('required');
-});
+rNo.addEventListener('change', () => { gcEl.value = 0; gcEl.disabled = true; gcEl.removeAttribute('required'); });
+rYes.addEventListener('change', () => { gcEl.value = ''; gcEl.disabled = false; gcEl.setAttribute('required', ''); });
 
-rYes.addEventListener('change', () => {
-  gcEl.value    = '';
-  gcEl.disabled = false;
-  gcEl.setAttribute('required', '');
-});
-
-/* =====================================================
-   RSVP — Submit & Google Sheets integration
-   Replace the placeholder URL with your Apps Script
-   web app deployment URL to activate live sync.
-   ===================================================== */
 const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
 document.getElementById('rsvp-btn').addEventListener('click', async () => {
@@ -1284,76 +1171,36 @@ document.getElementById('rsvp-btn').addEventListener('click', async () => {
   const diet   = document.getElementById('diet').value;
   const msg    = document.getElementById('msg').value.trim();
 
-  /* Validation */
   if (!name)   { showFieldError('Please enter your name.');               return; }
   if (!email)  { showFieldError('Please enter your email address.');       return; }
   if (!attend) { showFieldError('Please choose your attendance option.');  return; }
-  if (attend.value === 'Joyfully Accepting' && !guests) {
-                 showFieldError('Please enter the number of guests.');     return; }
+  if (attend.value === 'Joyfully Accepting' && !guests) { showFieldError('Please enter the number of guests.'); return; }
 
-  /* Loading state */
   const btn = document.getElementById('rsvp-btn');
-  btn.textContent = 'Sending…';
-  btn.disabled    = true;
+  btn.textContent = 'Sending…'; btn.disabled = true;
 
-  const payload = {
-    name,
-    email,
-    attendance : attend.value,
-    guests     : attend.value === 'Regretfully Declining' ? 0 : Number(guests),
-    dietary    : diet,
-    message    : msg,
-    timestamp  : new Date().toISOString(),
-  };
+  const payload = { name, email, attendance: attend.value, guests: attend.value === 'Regretfully Declining' ? 0 : Number(guests), dietary: diet, message: msg, timestamp: new Date().toISOString() };
 
-  /* Fire to Google Sheets (mode:no-cors = opaque response, treated as success) */
   try {
-    await fetch(GOOGLE_SHEET_URL, {
-      method  : 'POST',
-      mode    : 'no-cors',
-      headers : { 'Content-Type': 'application/json' },
-      body    : JSON.stringify(payload),
-    });
-  } catch (_) { /* Network error — still show success for demo; log in production */ }
+    await fetch(GOOGLE_SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  } catch (_) {}
 
-  /* Smooth transition: fade form → reveal success card */
   const fw = document.getElementById('form-wrapper');
-  fw.style.transition = 'opacity .5s ease';
-  fw.style.opacity    = '0';
+  fw.style.transition = 'opacity .5s ease'; fw.style.opacity = '0';
 
   setTimeout(() => {
     fw.style.display = 'none';
     const sc = document.getElementById('success-card');
-    sc.style.display    = 'block';
-    sc.style.opacity    = '0';
-    sc.style.transition = 'opacity .65s ease';
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      sc.style.opacity = '1';
-    }));
+    sc.style.display = 'block'; sc.style.opacity = '0'; sc.style.transition = 'opacity .65s ease';
+    requestAnimationFrame(() => requestAnimationFrame(() => { sc.style.opacity = '1'; }));
   }, 520);
 });
 
 function showFieldError(msg) {
-  /* Non-blocking inline error toast */
-  const existing = document.getElementById('rsvp-error');
-  if (existing) existing.remove();
-
-  const el = document.createElement('p');
-  el.id = 'rsvp-error';
-  el.textContent = msg;
-  Object.assign(el.style, {
-    fontFamily    : "'Cormorant Garamond', serif",
-    fontSize      : 'clamp(.9rem,1.8vw,1.05rem)',
-    color         : '#F0A070',
-    fontStyle     : 'italic',
-    marginBottom  : '1rem',
-    opacity       : '0',
-    transition    : 'opacity .3s ease',
-    textAlign     : 'center',
-  });
-
-  const btn = document.getElementById('rsvp-btn');
-  btn.parentNode.insertBefore(el, btn);
+  const existing = document.getElementById('rsvp-error'); if (existing) existing.remove();
+  const el = document.createElement('p'); el.id = 'rsvp-error'; el.textContent = msg;
+  Object.assign(el.style, { fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(.9rem,1.8vw,1.05rem)', color: '#F0A070', fontStyle: 'italic', marginBottom: '1rem', opacity: '0', transition: 'opacity .3s ease', textAlign: 'center' });
+  const btn = document.getElementById('rsvp-btn'); btn.parentNode.insertBefore(el, btn);
   requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = '1'; }));
   setTimeout(() => { el.style.opacity = '0'; setTimeout(() => el.remove(), 320); }, 4000);
 }
